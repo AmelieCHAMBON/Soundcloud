@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         // Les suiveurs
         DB::table('suit')->insert([
             'suiveur_id' => 1,
-            'suivi_id' => 1,
+            'suivi_id' => 2,
         ]);
 
 

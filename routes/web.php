@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MonControlleur@index');
+Route::get('/', 'MonControleur@index');
 
 
 Auth::routes();
