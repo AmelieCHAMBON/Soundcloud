@@ -37,6 +37,10 @@
     </ul>
 </nav>
 <audio id="audio" controls src="/tmp/toto.m4a"></audio><br />
+    <form id="search">
+        <input type="search" name="search" placeholder="Recherche" required/>
+        <input type="submit" />
+    </form>
 <div id="main">
     @yield('content')
 </div>

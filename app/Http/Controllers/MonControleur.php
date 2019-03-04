@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chanson;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,5 +31,27 @@ class MonControleur extends Controller
             
         }
         return redirect("/");
+    }
+    
+    public function utilisateur($id) {
+        $utilisateur = User::find($id);
+        if($utilisateur == false) {
+            abort("404");
+        }
+        return view("utilisateur", ["utilisateur" => $utilisateur]);
+    }
+    
+    public function suivi($id) {
+        $utilisateur = User::find($id);
+        if($utilisateur == false)
+            abort("403");
+        Auth::user()->jeLesSuit()->toggle($id);
+        return back();
+    }
+    
+    public function recherche($s) {
+        $users = User::whereRaw("name LIKE CONCAT(?,'%')", [$s])->get();
+        $chansons = Chanson::whereRaw("nom LIKE CONCAT(?,'%')", [$s])->get();
+        return view("recherche", ['utilisateurs' => $users, 'chansons' => $chansons]);
     }
 }
