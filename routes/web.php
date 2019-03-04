@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'MonControleur@index');
+Route::get('/nouvelle', 'MonControleur@nouvelle')->middleware('auth');
+Route::post('/creer', 'MonControleur@creer')->middleware('auth');
 
 
 Auth::routes();

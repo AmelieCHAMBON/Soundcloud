@@ -24,6 +24,7 @@
             <li><a href="{{ route('register') }}">Register</a></li>
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
+            <li><a href="/nouvelle">Ajouter une nouvelle chanson</a></li>
             <li><a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
