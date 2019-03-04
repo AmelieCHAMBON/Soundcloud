@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('_audio')
     
     {{$utilisateur->name}}
     <br/>
