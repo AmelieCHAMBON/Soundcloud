@@ -3,6 +3,15 @@ html, body {
     font-size: 20px;
     margin: 0;
     padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+nav{
+    background: #5100A2;
+}
+
+#main{
+    
 }
 
 #main-menu {
@@ -14,8 +23,91 @@ html, body {
     display: flex;
     justify-content: flex-end;
     list-style: none;
+    
 }
    
 #main-menu ul li {
     margin-left: 1rem;
+    margin-right: 1rem;
 }
+
+a{
+    text-decoration: none;
+    color: purple;
+}
+
+a:visited{
+    color: rgb(171, 136, 255);
+}
+
+a:hover{
+    color: blue;
+}
+
+a:active{
+    color: plum;
+}
+
+li{
+    list-style-type: none; 
+}
+
+#groupeChansons ul{
+    margin: 20px;
+    text-align: center;
+}
+
+#groupeChansons{
+   margin-left: 200px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+    max-width: 1000px;
+  }
+
+  #search{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 70px;
+  }
+
+  #search input{
+      display: flex;
+      text-align: center;
+      border-radius: none;
+      width: 1300px;
+      height: 35px;
+  }
+
+  audio{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+    max-width:600px;
+  }
+
+  audio{
+      width: 100%;
+  }
+
+  #testajax{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 10fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+    max-width: 1000px;
+  }
