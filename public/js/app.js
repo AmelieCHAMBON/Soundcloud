@@ -45,7 +45,7 @@ $(document).ready(function() {
     $("#testajax").click(function(e) {
         e.preventDefault();
         
-        .ajax({
+        $.ajax({
             type: "GET",
             url: "/testajax ",
             data : {
@@ -60,4 +60,12 @@ $(document).ready(function() {
             }
         });
     });
+    let player = document.querySelector("#player");
+    player.addEventListener("timeupdate", function() {
+        let currentTime = player.currentTime;
+        let duration = player.duration;
+        let position = (100*currentTime)/duration;
+        document.getElementsByClassName("progress").style.width = position+"%";
+    });
+    
 });

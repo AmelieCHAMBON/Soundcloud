@@ -324,6 +324,10 @@ i.fa-music {
       .holder .controls .slider .progress {        
         width: 0;
         height: 100%;
+        width: 6px;
+        background-color: rebeccapurple;
+        height: 5px;
+        width: 32px;
       }
         .holder .controls .slider .progress .pin {
           right: -8px;
@@ -367,7 +371,6 @@ i.fa-music {
         .holder .volume .volume-controls .slider .progress {
           bottom: 0;
           height: 100%;
-          width: 6px;
         }
           .holder .volume .volume-controls .slider .progress .pin {
             left: -5px;
@@ -380,7 +383,9 @@ i.fa-music {
 svg, img {
   display: block;
 }
-
+.progress {
+    
+}
 @keyframes spin {
   from {
     transform: rotateZ(0);
