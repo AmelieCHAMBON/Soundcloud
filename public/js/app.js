@@ -1,6 +1,8 @@
-$(document).pjax('[data-pjax] a, a [data-pjax]','#main')
 
 $(document).ready(function() {
+    $(document).pjax('[data-pjax] a, a[data-pjax]','#main');
+    $(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]','#main',{push:false});
+
     $('#main').on('click', 'a.chanson',function(e){
         e.preventDefault();
         var f = $(this).attr('data-file');
