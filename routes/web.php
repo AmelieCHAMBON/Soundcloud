@@ -24,6 +24,9 @@ Route::get('/recherche/{s}','MonControleur@recherche');
 
 Route::get('/testajax',"MonControleur@testajax");
 
+Route::get('/delete/user/{id}',"MonControleur@deleteUser");
+Route::get('/delete/chanson/{id}',"MonControleur@deleteChanson");
+
 
 Auth::routes();
 

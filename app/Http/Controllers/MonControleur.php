@@ -57,6 +57,28 @@ class MonControleur extends Controller
         return view("utilisateur", ["utilisateur" => $utilisateur]);
     }
     
+    public function deleteUser($id) {
+        // Supprimer toutes les chansons d'un utilisateur
+        
+        // Supprimer un utilisateur
+
+        $u=User::find($id);
+        if($u){
+            $u->delete($u);
+            return redirect()->back();
+        }
+    }
+    
+    public function deleteChanson($id) {
+        // Supprimer une chanson
+
+        $c=Chanson::find($id);
+        if($c){
+            $c->delete($c);
+            return redirect()->back();
+        }
+    }
+    
     public function suivi($id) {
         $utilisateur = User::find($id);
         
