@@ -1,3 +1,5 @@
+$(document).pjax('[data-pjax] a, a [data-pjax]','#main')
+
 $(document).ready(function() {
     $('#main').on('click', 'a.chanson',function(e){
         e.preventDefault();

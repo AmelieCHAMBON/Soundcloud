@@ -26,7 +26,7 @@
             <li><a href="{{ route('register') }}"><i class="fas fa-book-medical"></i></a></li>
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
-            <li><a href="/nouvelle"><i class="far fa-plus-square"></i></a></li>
+            <li><a href="/nouvelle" data-pjax><i class="far fa-plus-square"></i></a></li>
             <li><a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -43,11 +43,37 @@
     <input type="search" name="search" placeholder="Recherche" required/>
     <input type="submit" />
 </form>
+    <div id="audio" class="holder">
+  <div class="audio green-audio-player">
+    <div class="play-pause-btn">  
+        <i class="fas fa-pause play-pause-icon" id="playPause"></i>
+    </div>
+
+    <div class="controls">
+      <span class="current-time">0:00</span>
+      <div class="slider" data-direction="horizontal">
+        <div class="progress">
+          <div class="pin" id="progress-pin" data-method="rewind"></div>
+        </div>
+      </div>
+      <span class="total-time">0:00</span>
+    </div>
+
+    <div class="volume">
+      <div class="volume-btn">
+          <i class="fas fa-volume-up" id="speaker"></i>
+      </div>
+    </div>
+
+    <audio id="player" src=""></audio>
+  </div>
+</div>
 <div id="main">
     @yield('content')
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/jquery.pjax.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
