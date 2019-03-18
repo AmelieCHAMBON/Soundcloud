@@ -44,8 +44,9 @@ class MonControleur extends Controller
     public function suivi($id) {
         $utilisateur = User::find($id);
         
-        if($utilisateur == false)
-            abort("403");
+        if($utilisateur == false){
+            return redirect('/')->with('toastr',['statut' => 'error', 'message' => 'Problème de suivi']);
+        }
         
         Auth::user()->jeLesSuit()->toggle($id);
         return back()->with('toastr',['statut' => 'success', 'message' => 'Suivi modifié']);
