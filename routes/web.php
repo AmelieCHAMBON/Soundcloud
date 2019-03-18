@@ -22,7 +22,7 @@ Route::get('/suivi/{id}','MonControleur@suivi')->middleware('auth')->where('id',
 
 Route::get('/recherche/{s}','MonControleur@recherche');
 
-Route::get('/testajax',"MonControlleur@testajax")
+Route::get('/testajax',"MonControlleur@testajax");
 
 
 Auth::routes();

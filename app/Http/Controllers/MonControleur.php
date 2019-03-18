@@ -54,4 +54,8 @@ class MonControleur extends Controller
         $chansons = Chanson::whereRaw("nom LIKE CONCAT(?,'%')", [$s])->get();
         return view("recherche", ['utilisateurs' => $users, 'chansons' => $chansons]);
     }
+    
+    public function testajax() {
+        return "Ca marche";
+    }
 }
