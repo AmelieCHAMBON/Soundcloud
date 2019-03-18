@@ -30,8 +30,9 @@ $(document).ready(function() {
     $('#main').on('click', 'a.chanson',function(e){
         e.preventDefault();
         var f = $(this).attr('data-file');
-        
+        console.log(f);
         var audio = $('#player');
+        console.log(audio);
         audio.attr('src',f);
         audio[0].load();
         audio[0].play();
@@ -96,7 +97,7 @@ $(document).ready(function() {
         let currentTime = player.currentTime;
         let duration = player.duration;
         let position = (100*currentTime)/duration;
-        document.getElementsByClassName("progress").style.width = position+"%";
+        $("#progress-pin").css("width", position+"%");
     });
     
 });
