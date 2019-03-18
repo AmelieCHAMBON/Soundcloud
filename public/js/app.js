@@ -1,7 +1,11 @@
 
 $(document).ready(function() {
-    //$(document).pjax('[data-pjax] a, a[data-pjax]','#main');
-    //$(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]','#main',{push:false});
+    $(document).pjax('[data-pjax] a, a[data-pjax]','#main');
+    $(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]','#main',{push:false});
+    
+    $(document).on('submit', 'form[data-pjax]', function(e){
+        $.pjax.submit(e, '#main');
+    })
     
     toastr.options = {
         'closeButton': false,
@@ -33,7 +37,11 @@ $(document).ready(function() {
     
     $('#search').submit(function(e) {
         e.preventDefault();
-        window.location.href = "/recherche/"+e.target.elements[0].value;
+        if($.support.pjax) {
+            $.pjax({url: "/recherche/" + e.target.elements[0].value, container:'#main'});
+        } else {
+            window.location.href = "/recherche/"+e.target.elements[0].value;
+        }
     })
     
     $('#main').on('click', '.play-pause-icon',function(){

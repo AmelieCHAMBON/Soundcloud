@@ -30,7 +30,7 @@ class MonControleur extends Controller
             
             
         }
-        return redirect("/");
+        return redirect("/")->with('toastr',['statut' => 'success', 'message' => 'Chanson ajoutée']);
     }
     
     public function utilisateur($id) {
