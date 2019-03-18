@@ -56,6 +56,6 @@ class MonControleur extends Controller
     }
     
     public function testajax() {
-        return "Ca marche";
+        return redirect('/recherche/ut');
     }
 }
