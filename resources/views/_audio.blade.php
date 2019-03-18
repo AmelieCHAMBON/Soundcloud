@@ -1,7 +1,7 @@
 <div id="audio" class="holder">
   <div class="audio green-audio-player">
     <div class="play-pause-btn">  
-        <i class="fas fa-play play-pause-icon" id="playPause"></i>
+        <i class="fas fa-pause play-pause-icon" id="playPause"></i>
     </div>
 
     <div class="controls">

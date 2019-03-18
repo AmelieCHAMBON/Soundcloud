@@ -19,12 +19,12 @@ $(document).ready(function() {
         
        if($('#playPause').attr('class') == "fas fa-play play-pause-icon") {
            console.log($('#playPause').attr('class'));
-           audio[0].pause();
+           audio[0].play();
            $('#playPause').attr('class', "fas fa-pause play-pause-icon");
            
        } else {
            console.log($('#playPause').attr('class'));
-           audio[0].play();
+           audio[0].pause();
            $('#playPause').attr('class', "fas fa-play play-pause-icon");
         }
         
