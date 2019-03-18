@@ -20,7 +20,6 @@ $(document).ready(function() {
         'showMethod': 'fadeIn',
         'hideMethod': 'fadeOut'
     }
-    toastr["success"]("Inconcevable !");
 
     $('#main').on('click', 'a.chanson',function(e){
         e.preventDefault();
