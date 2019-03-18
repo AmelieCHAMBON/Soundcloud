@@ -41,4 +41,23 @@ $(document).ready(function() {
           }
         
     });
+    
+    $("#testajax").click(function(e) {
+        e.preventDefault();
+        
+        .ajax({
+            type: "GET",
+            url: "/testajax ",
+            data : {
+                login: "Gilles",
+                mdp: "aud123",
+            },
+            success : function(data, textStatus, jqXHR) {
+                $("#aremplir").html(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                
+            }
+        });
+    });
 });
