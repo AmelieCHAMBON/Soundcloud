@@ -68,12 +68,21 @@
     <audio id="player" src=""></audio>
   </div>
 </div>
+    
+    <pre>{{print_r(Session::all())}}</pre>
+    
+    @if(Session::has('toastr'))
+        toastr.{{Session::get('toastr')['statut']}}('{{Session::get('toastr')['message']}}')
+    @endif
+    
 <div id="main">
     @yield('content')
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery.pjax.js') }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
+    
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

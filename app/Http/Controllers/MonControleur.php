@@ -43,10 +43,12 @@ class MonControleur extends Controller
     
     public function suivi($id) {
         $utilisateur = User::find($id);
+        
         if($utilisateur == false)
             abort("403");
+        
         Auth::user()->jeLesSuit()->toggle($id);
-        return back();
+        return back()->with('toastr',['statut' => 'success', 'message' => 'Suivi modifié']);
     }
     
     public function recherche($s) {
